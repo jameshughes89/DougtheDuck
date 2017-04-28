@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Doug the Duck</string>
+    <string name="talk_to_me">Parle moi.</string>
+    <string name="doug_image_description">Doug the Canard!</string>
+</resources>

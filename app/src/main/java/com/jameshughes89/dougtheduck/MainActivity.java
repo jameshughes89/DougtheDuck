@@ -2,6 +2,7 @@ package com.jameshughes89.dougtheduck;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         hideNavAndOtherThings();
-
     }
 
     /**
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         displayTip.setText(theTip);
     }
 
-
     /**
      * Method to hide the navigation bar, top notifivation, and other things
      */
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
-
     /**
      * Picks a random tip for Doug to say
      *
@@ -70,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
      * @return The tip Doug will say in the devices' Language
      */
     private String getTip(){
+        // Gets the device's set language
         String language = Locale.getDefault().getLanguage();
         int nextTipIndex;
         String theTip;
@@ -90,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 nextTipIndex = rng.nextInt(DebugTipsEnglish.Tips.length);
                 theTip = DebugTipsEnglish.Tips[nextTipIndex];
         }
-
         return theTip;
     }
 
