@@ -3,8 +3,8 @@ package com.jameshughes89.dougtheduck;
 /**
  * Created by JamesHughes89 on 4/27/2017.
  *
- * This class just holds some Strings that will be printed as
- * Debugging tips that Doug can suggest to the user.
+ * This class just holds some ENGLISH Strings that will be printed
+ * as debugging tips that Doug can suggest to the user.
  */
 
 class DebugTipsEnglish {
