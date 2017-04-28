@@ -1,6 +1,5 @@
 package com.jameshughes89.dougtheduck;
 
-import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
     public void dougTip(View view){
 
         // Picks a random tip for Doug to say
-        int nextTipIndex = rng.nextInt(DebugTips.Tips.length);
-        String theTip = DebugTips.Tips[nextTipIndex];
+        int nextTipIndex = rng.nextInt(DebugTipsEnglish.Tips.length);
+        String theTip = DebugTipsEnglish.Tips[nextTipIndex];
 
         // Puts the tip on the screen (in the textView specifically)
         TextView displayTip = (TextView) findViewById(R.id.textView);

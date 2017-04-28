@@ -7,7 +7,7 @@ package com.jameshughes89.dougtheduck;
  * Debugging tips that Doug can suggest to the user.
  */
 
-class DebugTips {
+class DebugTipsEnglish {
 
     /**
      * Just a static array of doug's tips (of type String)
