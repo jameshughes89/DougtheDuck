@@ -20,6 +20,7 @@ class DebugTipsEnglish {
             "It might be a good call to break this code into more methods. Smaller chunks of code are easier to work with and test.",
             "This might sound odd, but maybe take a little bit of a break. You might be suprised with what you think of in 10mins from now",
             "Do you think better variable names might help in this situation?",
+            "Is that a loop starting at not Zero... Why?"
     };
 
 }
