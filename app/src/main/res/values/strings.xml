@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Doug the Duck</string>
     <string name="talk_to_me">Talk to me.</string>
+    <string name="table_image_description">A Table.</string>
     <string name="doug_image_description">Doug the Duck!</string>
     <string name="bubble_image_description">Speech bubble.</string>
 </resources>

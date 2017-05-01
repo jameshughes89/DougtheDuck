@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rng = new Random();         // Random Number Generator (rng) for selecting a tip (used in dougTip)
+        // Random Number Generator (rng) for selecting a tip (used in dougTip)
+        rng = new Random();
     }
 
     @Override
@@ -31,6 +33,31 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         hideNavAndOtherThings();
+        animateDoug();
+    }
+
+    /***
+     * Set's Doug's animation. When you click him, he will animate in some way.
+     * The ultimate goal is to have him like be pressed somehow.
+     */
+    private void animateDoug(){
+        View view = findViewById(R.id.imageView2);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            ImageView img = (ImageView)findViewById(R.id.imageView2);
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        img.setImageResource(R.drawable.doug_click);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        img.setImageResource(R.drawable.doug);
+                        dougTip(v);                     // Say the tip
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     /**
