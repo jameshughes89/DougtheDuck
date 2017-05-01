@@ -1,9 +1,13 @@
 package com.jameshughes89.dougtheduck;
 
+import android.animation.AnimatorSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -71,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Makes the speech bubble pop when you click it.
      *
-     * Currently broken, but idk why
      */
     private void animateBubble(){
         View view = findViewById(R.id.imageView3);
@@ -87,6 +90,18 @@ public class MainActivity extends AppCompatActivity {
                         // Could've set it to invisible, but I didn't because it's slightly easier this way
                         if(bubble.getVisibility() == View.VISIBLE){
                             bubble.setImageResource(R.drawable.bubble_click);
+
+                            // Animation chunk. Broken. Consider doing in XML format
+                            //Animation poppingFade = new AlphaAnimation(1.0f, 0.0f);
+                            //poppingFade.setDuration(500);
+                            //Animation poppingGrow = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f, bubble.getWidth()/2, bubble.getHeight()/2);
+                            //poppingGrow.setDuration(500);
+                            //bubble.startAnimation(poppingFade);
+                            //bubble.startAnimation(poppingGrow);
+                            //bubbleText.startAnimation(poppingGrow);
+                            // Busted above
+
+
                             bubbleText.setText("");
                         }
                         break;
