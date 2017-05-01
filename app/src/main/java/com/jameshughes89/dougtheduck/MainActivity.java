@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
 import java.util.Random;
 
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Random Number Generator (rng) for selecting a tip (used in dougTip)
         rng = new Random();
+        animateDoug();
+        animateBubble();
     }
 
     @Override
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         hideNavAndOtherThings();
-        animateDoug();
+
     }
 
     /***
@@ -43,16 +47,52 @@ public class MainActivity extends AppCompatActivity {
     private void animateDoug(){
         View view = findViewById(R.id.imageView2);
         view.setOnTouchListener(new View.OnTouchListener() {
-            ImageView img = (ImageView)findViewById(R.id.imageView2);
+            ImageView doug = (ImageView)findViewById(R.id.imageView2);
+            ImageView bubble = (ImageView)findViewById(R.id.imageView3);
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        img.setImageResource(R.drawable.doug_click);
+                        doug.setImageResource(R.drawable.doug_click);
                         break;
                     case MotionEvent.ACTION_UP:
-                        img.setImageResource(R.drawable.doug);
+                        doug.setImageResource(R.drawable.doug);
+                        if(bubble.getVisibility() == View.INVISIBLE){
+                            bubble.setVisibility(View.VISIBLE);
+                        }
                         dougTip(v);                     // Say the tip
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
+    /**
+     * Makes the speech bubble pop when you click it.
+     *
+     * Currently broken, but idk why
+     */
+    private void animateBubble(){
+        View view = findViewById(R.id.imageView3);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                ImageView bubble = (ImageView)findViewById(R.id.imageView3);
+                TextView bubbleText = (TextView)findViewById(R.id.textView);
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        // if the bubble is visible, then pop it.
+                        // Tried to do '.clearComposingText()' on the textView, but that didn't work
+                        // Could've set it to invisible, but I didn't because it's slightly easier this way
+                        if(bubble.getVisibility() == View.VISIBLE){
+                            bubble.setImageResource(R.drawable.bubble_click);
+                            bubbleText.setText("");
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        bubble.setVisibility(View.INVISIBLE);
+                        bubble.setImageResource(R.drawable.bubble);
                         break;
                 }
                 return true;
@@ -70,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
         String theTip = getTip();
 
         // Puts the tip on the screen (in the textView specifically)
-        TextView displayTip = (TextView) findViewById(R.id.textView);
-        displayTip.setText(theTip);
+        TextView bubbleText = (TextView)findViewById(R.id.textView);
+        bubbleText.setText(theTip);
     }
 
     /**

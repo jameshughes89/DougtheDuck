@@ -11,10 +11,13 @@ class DebugTipsEnglish {
 
     /**
      * Just a static array of doug's tips (of type String)
+     *
+     * QUESTION: Should I have just different static arrays instead of new classes for other languages?
+     *
      */
     static String[] Tips = {
             "Please tell me what your code is supposed to do. Be sure to take your time.",
-            "One line at a time. I'm not joking, do it... Honestly, make ZERO assumptions about your code",
+            "One line at a time. I'm not joking, do it. Make ZERO assumptions about your code",
             "Perhaps you comment a little more. You may be suprised!",
             "Are you sure that loop is supposed to go to .length-2? That seems unusual.",
             "It might be a good call to break this code into more methods. Smaller chunks of code are easier to work with and test.",
