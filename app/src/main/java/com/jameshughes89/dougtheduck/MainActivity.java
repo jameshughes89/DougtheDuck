@@ -1,5 +1,6 @@
 package com.jameshughes89.dougtheduck;
 
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,16 +54,26 @@ public class MainActivity extends AppCompatActivity {
         view.setOnTouchListener(new View.OnTouchListener() {
             ImageView doug = (ImageView)findViewById(R.id.imageView2);
             ImageView bubble = (ImageView)findViewById(R.id.imageView3);
+            TextView bubbleText = (TextView)findViewById(R.id.textView);
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                // Have the pressed version of Doug showing when the user has finger down
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         doug.setImageResource(R.drawable.doug_click);
                         break;
+                    // Have the normal Doug showing when the user stops touching him
                     case MotionEvent.ACTION_UP:
                         doug.setImageResource(R.drawable.doug);
-                        if(bubble.getVisibility() == View.INVISIBLE){
-                            bubble.setVisibility(View.VISIBLE);
+                        // If the bubble is not FULLY visible, make it visible
+                        if(bubble.getAlpha() != 1){
+                            // Return bubble properties back to normal
+                            bubble.setAlpha(1.0f);
+                            bubbleText.setAlpha(1.0f);
+                            bubble.setScaleX(1.0f);
+                            bubble.setScaleY(1.0f);
+                            bubbleText.setScaleX(1.0f);
+                            bubbleText.setScaleY(1.0f);
                         }
                         dougTip(v);                     // Say the tip
                         break;
@@ -73,42 +84,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Makes the speech bubble pop when you click it.
+     * Calls the animation that makes the speech bubble pop when you click it.
      *
      */
     private void animateBubble(){
-        View view = findViewById(R.id.imageView3);
-        view.setOnTouchListener(new View.OnTouchListener() {
+        // Sets the proper views (bubble and bubbleText) to the animation
+        ImageView bubble = (ImageView)findViewById(R.id.imageView3);
+        TextView bubbleText = (TextView)findViewById(R.id.textView);
+        final AnimatorSet bubbleAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble);
+        final AnimatorSet bubbleTextAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble);
+        bubbleAnimator.setTarget(bubble);
+        bubbleTextAnimator.setTarget(bubbleText);
+
+        bubble.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 ImageView bubble = (ImageView)findViewById(R.id.imageView3);
-                TextView bubbleText = (TextView)findViewById(R.id.textView);
-                switch (event.getAction()){
-                    case MotionEvent.ACTION_DOWN:
-                        // if the bubble is visible, then pop it.
-                        // Tried to do '.clearComposingText()' on the textView, but that didn't work
-                        // Could've set it to invisible, but I didn't because it's slightly easier this way
-                        if(bubble.getVisibility() == View.VISIBLE){
-                            bubble.setImageResource(R.drawable.bubble_click);
-
-                            // Animation chunk. Broken. Consider doing in XML format
-                            //Animation poppingFade = new AlphaAnimation(1.0f, 0.0f);
-                            //poppingFade.setDuration(500);
-                            //Animation poppingGrow = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f, bubble.getWidth()/2, bubble.getHeight()/2);
-                            //poppingGrow.setDuration(500);
-                            //bubble.startAnimation(poppingFade);
-                            //bubble.startAnimation(poppingGrow);
-                            //bubbleText.startAnimation(poppingGrow);
-                            // Busted above
-
-
-                            bubbleText.setText("");
-                        }
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        bubble.setVisibility(View.INVISIBLE);
-                        bubble.setImageResource(R.drawable.bubble);
-                        break;
+                // If the bubble is currently visible, play popping animation.
+                if(bubble.getAlpha() == 1){
+                    //bubble.setImageResource(R.drawable.bubble_click);
+                    bubbleAnimator.start();
+                    bubbleTextAnimator.start();
                 }
                 return true;
             }
