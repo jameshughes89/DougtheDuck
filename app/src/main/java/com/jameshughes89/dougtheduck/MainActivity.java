@@ -6,19 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    // A few variables to save bubble_pop, and bubble_pop text's properties in a bundle.
+    public static final String BUBBLE_ALPHA = "com.jameshughes89.dougtheduck.BUBBLE_ALPHA";
+    public static final String BUBBLE_TEXT_ALPHA = "com.jameshughes89.dougtheduck.BUBBLE__TEXT_ALPHA";
+    public static final String BUBBLE_TEXT_MESSAGE = "com.jameshughes89.dougtheduck.BUBBLE_TEXT_MESSAGE";
+
+    // Random Number Generator for getting tips.
     Random rng;
 
     @Override
@@ -35,14 +36,64 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart(){
         super.onStart();
-        // Nothing to do in here as of now I gues...
+        // Nothing to do in here as of now I guess...
     }
 
     @Override
     public void onResume() {
         super.onResume();
         hideNavAndOtherThings();
+    }
 
+    /**
+     * A method to restore saved properties about the bubble_pop and bubbleText views.
+     * Specifically, it restors:
+     * - bubble_pop's alpha (visibility)
+     * - bubble_pop text's alpha (visibility)
+     * - bubble_pop text's text (tip)
+     *
+     * @param savedInstanceState
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Get the bubble_pop and bubbleText views so we can save their properties
+        ImageView bubble = (ImageView)findViewById(R.id.imageView3);
+        TextView bubbleText = (TextView)findViewById(R.id.textView);
+
+        // Get the saved properties from the bundle
+        float bubbleAlpha = savedInstanceState.getFloat(BUBBLE_ALPHA);
+        float bubbleTextAlpha = savedInstanceState.getFloat(BUBBLE_TEXT_ALPHA);
+        String bubbleTextMessage = savedInstanceState.getString(BUBBLE_TEXT_MESSAGE);
+
+        // Sets the properties of the respective views
+        bubble.setAlpha(bubbleAlpha);
+        bubbleText.setAlpha(bubbleTextAlpha);
+        bubbleText.setText(bubbleTextMessage);
+
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    /**
+     * A method to save properties about the bubble_pop and bubbleText views.
+     * Specifically, it saves:
+     * - bubble_pop's alpha (visibility)
+     * - bubble_pop text's alpha (visibility)
+     * - bubble_pop text's text (tip)
+     *
+     * @param savedInstanceState
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Get the bubble_pop and bubbleText views so we can save their properties
+        ImageView bubble = (ImageView)findViewById(R.id.imageView3);
+        TextView bubbleText = (TextView)findViewById(R.id.textView);
+
+        // Save their properties
+        savedInstanceState.putFloat(BUBBLE_ALPHA, bubble.getAlpha());
+        savedInstanceState.putFloat(BUBBLE_TEXT_ALPHA, bubbleText.getAlpha());
+        savedInstanceState.putString(BUBBLE_TEXT_MESSAGE, bubbleText.getText().toString());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     /***
@@ -65,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
                     // Have the normal Doug showing when the user stops touching him
                     case MotionEvent.ACTION_UP:
                         doug.setImageResource(R.drawable.doug);
-                        // If the bubble is not FULLY visible, make it visible
+                        // If the bubble_pop is not FULLY visible, make it visible
                         if(bubble.getAlpha() != 1){
-                            // Return bubble properties back to normal
+                            // Return bubble_pop properties back to normal
                             bubble.setAlpha(1.0f);
                             bubbleText.setAlpha(1.0f);
                             bubble.setScaleX(1.0f);
@@ -84,15 +135,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Calls the animation that makes the speech bubble pop when you click it.
-     *
+     * Calls the animation that makes the speech bubble_pop pop when you click it.
      */
     private void animateBubble(){
-        // Sets the proper views (bubble and bubbleText) to the animation
+        // Sets the proper views (bubble_pop and bubbleText) to the animation
         ImageView bubble = (ImageView)findViewById(R.id.imageView3);
         TextView bubbleText = (TextView)findViewById(R.id.textView);
-        final AnimatorSet bubbleAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble);
-        final AnimatorSet bubbleTextAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble);
+        final AnimatorSet bubbleAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble_pop);
+        final AnimatorSet bubbleTextAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.bubble_pop);
         bubbleAnimator.setTarget(bubble);
         bubbleTextAnimator.setTarget(bubbleText);
 
@@ -100,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 ImageView bubble = (ImageView)findViewById(R.id.imageView3);
-                // If the bubble is currently visible, play popping animation.
+                // If the bubble_pop is currently visible, play popping animation.
                 if(bubble.getAlpha() == 1){
-                    //bubble.setImageResource(R.drawable.bubble_click);
+                    //bubble_pop.setImageResource(R.drawable.bubble_click);
                     bubbleAnimator.start();
                     bubbleTextAnimator.start();
                 }
