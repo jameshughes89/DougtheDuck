@@ -12,6 +12,18 @@ import android.widget.TextView;
 import java.util.Locale;
 import java.util.Random;
 
+/**
+ * Created by JamesHughes89 on 4/27/2017.
+ *
+ * Doug the Duck app: A Rubber Duck Debugger.
+ *
+ * Credits:
+ * Creator - James Alexander Hughes
+ *     Art - Matea Drljepan
+ *  French - ???
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     // A few variables to save bubble_pop, and bubble_pop text's properties in a bundle.
