@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 ImageView bubble = (ImageView)findViewById(R.id.imageView3);
                 // If the bubble_pop is currently visible, play popping animation.
                 if(bubble.getAlpha() == 1){
-                    //bubble_pop.setImageResource(R.drawable.bubble_click); // Can put back in... but I think it's too ugly. 
+                    //bubble_pop.setImageResource(R.drawable.bubble_click); // Can put back in... but I think it's too ugly.
                     bubbleAnimator.start();
                     bubbleTextAnimator.start();
                 }

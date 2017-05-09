@@ -13,18 +13,43 @@ class DebugTipsEnglish {
      * Just a static array of doug's tips (of type String)
      *
      * QUESTION: Should I have just different static arrays instead of new classes for other languages?
+     * ANSWER: Probably, but it might be easier this way if I'm having other people do translations for me.
      *
      */
     static String[] Tips = {
+
+            // Slow down
             "Please tell me what your code is supposed to do. Be sure to take your time.",
-            "One line at a time. I'm not joking, do it. Make ZERO assumptions about your code",
-            "Perhaps you comment a little more. You may be suprised!",
-            "Are you sure that loop is supposed to go to .length-2? That seems unusual.",
-            "It might be a good call to break this code into more methods. Smaller chunks of code are easier to work with and test.",
-            "This might sound odd, but maybe take a little bit of a break. You might be suprised with what you think of in 10mins from now",
+            "One line at a time. I'm not joking, do it. Make ZERO assumptions about your code.",
+            "Slow down! I have to follow along too.",
+            "Try getting a piece of paper and drawing out what's happening.",
+            "Can you get a friend to walk through the code with you?",
+            "You may have already done this, but if not, try a debugger.",
+            "Comment out every line, and slowly uncomment them one at a time and see if you can find the problem",
+
+            // Broad ideas of things to change/do
+            "Perhaps add a few more comments. You may be suprised.",
             "Do you think better variable names might help in this situation?",
-            "Is that a loop starting at not Zero... Why? Are you sure?",
-            "Just throw in more print statements."
+            "It might be a good call to break this code into more methods; smaller chunks of code are easier to work with.",
+            "Just throw in more print statements, you never know.",
+            "Track the values of those variables throughout the execution of the code.",
+            "Sometimes the line number of the error is off. Check Around that line.",
+            "Put some prints in those IF statements; are we actually triggering them properly?",
+            "Is that loop executing as many times as you thought?",
+            "Is the problem with a specific case, or is the problem very general?",
+            "Is the problem with the objects you're using, and not the actual method?",
+            "keep throwing a bunch of random conditions at your code and see what happens.",
+
+            // Oddly specific things to change/do
+            "Is that a loop starting at not zero? Why? Are you sure?",
+            "Are you sure that loop is supposed to go to .length-2? That seems unusual.",
+            "Is that a == when it should be a .equals?",
+
+            // Motivational
+            "Ugh, this is frustrating, but I'm certain we'll get it",
+            "Don't give up, but perhaps take a quick break. Never underestimate the power of a break!",
+            "Maybe take a little bit of a break. You might be surprised with what you think of in 10mins from now.",
+            "You'll get this, but in the mean time, go work on something else. A change of pace could be good.",
     };
 
 }
