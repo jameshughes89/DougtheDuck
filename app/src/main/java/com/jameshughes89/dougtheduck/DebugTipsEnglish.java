@@ -53,7 +53,8 @@ class DebugTipsEnglish {
             "Did you initialise those variables to the values correctly?",
             "Did you update variables correctly? Double check those.",
             "Sometimes it can help to clear out variable values before reusing them.",
-            "Is that counter in the right place?",
+            "Is that counter incremented in the right place?",
+            "Maybe count the number of times that loop executes. Is it what you expect?",
 
             // Motivational
             "Ugh, this is frustrating, but I'm certain we'll get it.",
