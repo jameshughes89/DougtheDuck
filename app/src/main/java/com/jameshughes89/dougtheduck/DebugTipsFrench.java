@@ -16,7 +16,8 @@ class DebugTipsFrench {
             "I do not know french.",
             "I still don't know french!",
             "I will have to deal with the strings 'values' thing still huh...",
-            "The string values thing shouldn't be too hard, but still"
+            "The string values thing shouldn't be too hard, but still",
+            "French french french!"
     };
 
 }
