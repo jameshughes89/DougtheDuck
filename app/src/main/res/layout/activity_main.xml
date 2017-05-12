@@ -39,7 +39,7 @@
         android:contentDescription="@string/bubble_image_description"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/bubble"
-        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteY="35dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.0" />
@@ -48,7 +48,7 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="159dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="69dp"
         android:fontFamily="casual"
         android:text="@string/talk_to_me"
         android:textSize="18sp"
@@ -58,7 +58,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
 
