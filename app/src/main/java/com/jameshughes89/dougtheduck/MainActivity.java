@@ -128,11 +128,12 @@ public class MainActivity extends AppCompatActivity {
                     // Have the normal Doug showing when the user stops touching him
                     case MotionEvent.ACTION_UP:
                         doug.setImageResource(R.drawable.doug);
-                        // If the bubble_pop is not FULLY visible, make it visible
-                        if(bubble.getAlpha() != 1){
+                        // If the bubble_pop is not visible, make it visible
+                        // I made it < 94 in case of floating point issues
+                        if(bubble.getAlpha() < 0.94f){
                             // Return bubble_pop properties back to normal
-                            bubble.setAlpha(1.0f);
-                            bubbleText.setAlpha(1.0f);
+                            bubble.setAlpha(0.95f);
+                            bubbleText.setAlpha(0.95f);
                             bubble.setScaleX(1.0f);
                             bubble.setScaleY(1.0f);
                             bubbleText.setScaleX(1.0f);
@@ -163,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 ImageView bubble = (ImageView)findViewById(R.id.imageView3);
                 // If the bubble_pop is currently visible, play popping animation.
-                if(bubble.getAlpha() == 1){
+                // I made it > 94 in case of floating point issues
+                if(bubble.getAlpha() > 0.94f){
                     //bubble_pop.setImageResource(R.drawable.bubble_click); // Can put back in... but I think it's too ugly.
                     bubbleAnimator.start();
                     bubbleTextAnimator.start();
