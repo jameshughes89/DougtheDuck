@@ -10,7 +10,7 @@ package com.jameshughes89.dougtheduck;
 class DebugTipsFrench {
 
     /**
-     * Just a static array of doug's tips (of type String)
+     * Just a static array of doug's tips (of type String) 
      */
     static String[] Tips = {
             "I do not know french.",
