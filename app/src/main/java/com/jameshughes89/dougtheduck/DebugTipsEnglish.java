@@ -44,6 +44,7 @@ class DebugTipsEnglish {
             "Is the problem with a specific case, or is the problem very general?",
             "Is the problem with the objects you're using, and not the actual method?",
             "Keep throwing a bunch of random conditions at your code and see what happens.",
+            "Maybe you changed a pointer instead of actually copying the information?",
 
             // Oddly specific things to change/do
             "Is that a loop starting at not zero? Why? Are you sure?",
