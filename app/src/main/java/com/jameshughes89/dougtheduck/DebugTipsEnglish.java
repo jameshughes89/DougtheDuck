@@ -49,7 +49,7 @@ class DebugTipsEnglish {
             // Oddly specific things to change/do
             "Is that a loop starting at not zero? Why? Are you sure?",
             "Are you sure that loop is supposed to go to .length-2? That seems unusual.",
-            "Is that a == when it should be a .equals?",
+            "Is that an == when it should be a .equals?",
             "Is that nested loop dependent on the outer loop's variable? Those sometimes can be tricky.",
             "Did you initialise those variables to the values correctly?",
             "Did you update variables correctly? Double check those.",

@@ -2,6 +2,7 @@ package com.jameshughes89.dougtheduck;
 
 /**
  * Created by JamesHughes89 on 4/28/2017.
+ * Translated by Ethan C. Jackson on X/XX/XXXX.
  *
  * This class just holds some FRENCH Strings that will be printed
  * as debugging tips that Doug can suggest to the user.
