@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             TextView bubbleText = (TextView)findViewById(R.id.textView);
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                // Have the pressed version of Doug showing when the user has finger down
+                // Have the pressed version of Doug displayed when the user has finger down
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         doug.setImageResource(R.drawable.doug_click);
