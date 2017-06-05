@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
      * - bubble_pop text's alpha (visibility)
      * - bubble_pop text's text (tip)
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The thing that is used to restore info from the app (an android thing)
      */
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
      * - bubble_pop text's alpha (visibility)
      * - bubble_pop text's text (tip)
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The thing that is used to restore info from the app (an android thing)
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
