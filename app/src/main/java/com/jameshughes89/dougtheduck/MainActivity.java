@@ -20,7 +20,8 @@ import java.util.Random;
  * Credits:
  * Creator - James Alexander Hughes
  *     Art - Matea Drljepan
- *  French - ???
+ *     Art - Markus Spiske
+ *  French - Ethan C. Jackson 
  *
  */
 
