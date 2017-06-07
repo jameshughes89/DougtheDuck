@@ -26,8 +26,8 @@ class DebugTipsEnglish {
             "Try getting a piece of paper and drawing out what's happening.",
             "Can you get a friend to walk through the code with you?",
             "You may have already done this, but if not, try a debugger.",
-            "Comment out every line, and slowly uncomment them one at a time and see if you can find the problem",
-            "Put away some of those distractions. It can be really hard focus with those getting in the way",
+            "Comment out every line, and slowly uncomment them one at a time and see if you can find the problem.",
+            "Put away some of those distractions. It can be really hard focus with those getting in the way.",
             "Close facebook, put your phone away, turn off Reddit.",
 
             // Broad ideas of things to change/do
