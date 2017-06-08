@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Doug</string>
+    <string name="talk_to_me">Háblame.</string>
+    <string name="table_image_description">Una Mesa.</string>
+    <string name="doug_image_description">Doug el Pato!</string>
+    <string name="bubble_image_description">Burbuja de Diálogo.</string>
+</resources>

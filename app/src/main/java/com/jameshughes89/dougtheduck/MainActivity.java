@@ -222,12 +222,14 @@ public class MainActivity extends AppCompatActivity {
                 nextTipIndex = rng.nextInt(DebugTipsEnglish.Tips.length);
                 theTip = DebugTipsEnglish.Tips[nextTipIndex];
                 break;
-
             case "fr":  // French
                 nextTipIndex = rng.nextInt(DebugTipsFrench.Tips.length);
                 theTip = DebugTipsFrench.Tips[nextTipIndex];
                 break;
-
+            case "es":
+                nextTipIndex = rng.nextInt(DebugTipsSpanish.Tips.length);
+                theTip = DebugTipsSpanish.Tips[nextTipIndex];
+                break;
             default:    // default --- Will be English.
                 nextTipIndex = rng.nextInt(DebugTipsEnglish.Tips.length);
                 theTip = DebugTipsEnglish.Tips[nextTipIndex];
