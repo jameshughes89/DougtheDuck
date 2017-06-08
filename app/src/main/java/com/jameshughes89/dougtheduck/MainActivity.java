@@ -18,10 +18,11 @@ import java.util.Random;
  * Doug the Duck app: A Rubber Duck Debugger.
  *
  * Credits:
- * Creator - James Alexander Hughes
- *     Art - Matea Drljepan
- *     Art - Markus Spiske
- *  French - Ethan C. Jackson
+ *  Creator - James Alexander Hughes
+ *      Art - Matea Drljepan
+ *      Art - Markus Spiske
+ *   French - Ethan C. Jackson
+ *  Spanish - Patrick Scott
  *
  */
 
