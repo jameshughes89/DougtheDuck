@@ -23,6 +23,7 @@ import java.util.Random;
  *      Art - Markus Spiske
  *   French - Ethan C. Jackson
  *  Spanish - Patrick Scott
+ *  Spanish - Alexander Corona
  *
  */
 
