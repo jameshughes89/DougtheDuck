@@ -25,7 +25,7 @@ public class DebugTipsSpanish {
             "Es posible que ya hayas hecho esto, pero si no, prueba con un depurador.",
             "Comentar cada línea, y poco a poco descomentar uno a la vez para ver si se puede encontrar el problema.",
             "Deja algunas de esas distracciones tuyas. Puede ser muy difícil con esas interpuestas en el camino.",
-            "Cierra facebook, apaga tu teléfono, apaga el Reddit.",
+            "Cierra Facebook, apaga tu teléfono, apaga el Reddit.",
 
             // Broad ideas of things to change/do
             "Quizás agregue más comentarios. Te puedes sorprender.",
