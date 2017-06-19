@@ -21,6 +21,7 @@ import java.util.Random;
  *  Creator - James Alexander Hughes
  *      Art - Matea Drljepan
  *      Art - Markus Spiske
+ *    Farsi - Negar Nazari
  *   French - Ethan C. Jackson
  *  Spanish - Patrick Scott
  *  Spanish - Alexander Corona
