@@ -2,7 +2,7 @@ package com.jameshughes89.dougtheduck;
 
 /**
  * Created by JamesHughes89 on 4/27/2017.
- * Translated by Negar Nazari X/XX/XXXX.
+ * Translated by Negar Nazari 6/18/2017.
  *
  * This class just holds some FARSI Strings that will be printed
  * as debugging tips that Doug can suggest to the user.
@@ -16,49 +16,49 @@ class DebugTipsFarsi {
     static String[] Tips = {
 
             // Slow down
-            "Please tell me what your code is supposed to do. Be sure to take your time.",
-            "One line at a time. I'm not joking, do it. Make ZERO assumptions about your code.",
-            "Slow down! I have to follow along too.",
-            "Take your time on every line of code. Don't rush, we've got time.",
-            "Try getting a piece of paper and drawing out what's happening.",
-            "Can you get a friend to walk through the code with you?",
-            "You may have already done this, but if not, try a debugger.",
-            "Comment out every line, and slowly uncomment them one at a time and see if you can find the problem.",
-            "Put away some of those distractions. It can be really hard focus with those getting in the way.",
-            "Close Facebook, put your phone away, turn off Reddit.",
+            "لطفا به من بگو کدت قراراست چه کاری انجام بدهد. مطمئن باش که حداکثر استفاده از زمانت رو میکنی.",
+            "خط به خط. شوخی نمی کنم انجامش بده. هیچ فرضیه ای در مورد کدت درست نکن.",
+            "سرعتت رو کم کن! منم باید تعقیبت کنم.",
+            "حداکثر استفاده از زمانت رو برای هر خط بکن. عجله نکن ، زمان داریم.",
+            "یک تکه کاغذ بردار و هرچیزی که اتفاق می افته رو رسم کن.",
+            "می تونی از یه دوست کمک بگیری که همراهت کد رو چک کنه؟",
+            "ممکنه تا الان این کار رو کرده باشی اما اگر نکردی باید کد رو دی باگ کنی.",
+            "برای هر خط یه توضیح (کامنت) بنویس و بعد آروم آروم شروع کن به حذف کردن کامنتها تا وقتی که مشکل رو پیدا کنی.",
+            "بعضی از چیزهایی که باعث برهم خوردن تمرکزت میشه ببند.",
+            "فیسبوک رو ببند، موبایلت رو کنار بذار، ردییت (وب سایت خبری) رو خاموش کن",
 
             // Broad ideas of things to change/do
-            "Perhaps add a few more comments. You may be surprised.",
-            "Do you think better variable names might help in this situation?",
-            "It might be a good call to break this code into more methods; smaller chunks of code are easier to work with.",
-            "Just throw in more print statements, you never know.",
-            "Maybe try some print statements to narrow down where it stops working as expected.",
-            "Put some prints in those IF statements; are we actually triggering them properly?",
-            "Try printing out some of those variables during the execution of the code.",
-            "Track the values of those variables throughout the execution of the code.",
-            "Sometimes the line number of the error is off. Check Around that line.",
-            "Is that loop executing as many times as you thought?",
-            "Is the problem with a specific case, or is the problem very general?",
-            "Is the problem with the objects you're using, and not the actual method?",
-            "Keep throwing a bunch of random conditions at your code and see what happens.",
-            "Maybe you changed a pointer instead of actually copying the information?",
+            "چندتا کامنت دیگه اضافه کن. ممکنه که غافلگیر بشی.",
+            "فکر میکنی تغییر اسامی متغیرها میتونه تو این شرایط کمک کنه؟",
+            "ممکنه که تقسیم کد به کدهای کوچک تر که کار کردن باهاشون راحتتره ایده ای خوبی باشه.",
+            "از پرینت استیمنت های بیشتری استفاده کنید.",
+            "از پرینت استتیمنت می تونید استفاده کنید برای جدا کردن کد و فهمیدن اینکه مشکل کار کجاست.",
+            "تعدادی پرینت در برخی استیمنت های اگر بگذارید، آیا ما آنها را به درستی ابلاغ کردیم؟",
+            "سعی کنید برخی از این متغیرها را در حال اجرای کد چاپ کنید.",
+            "مقادیر متغیرها رو  در طول انجام عملیات  پیگیری کن.",
+            "برخی اوقات شماره خط اشتباه خاموش هست. اطراف آن را بررسی کنید.",
+            "آیا لوپ به اندازه ای که شما فکر می کردید اجرا می شود؟",
+            "آیا مشکل مربوط به یک مورد خاص هست یا عمومی هست؟",
+            "آیا مشکل به دلیل چیزهایی است که شما استفاده می کنید و نه به دلیل روشی که به کار می برید.",
+            "از تعدادی شرایط رندوم استفاده کنید و ببینید چه تغییری حاصل می شود.",
+            "شاید یک پوینتر رو به جای کپی کردن اطلاعات عوض کردید.",
 
             // Oddly specific things to change/do
-            "Is that a loop starting at not zero? Why? Are you sure?",
-            "Are you sure that loop is supposed to go to .length-2? That seems unusual.",
-            "Is that an == when it should be a .equals?",
-            "Is that nested loop dependent on the outer loop's variable? Those sometimes can be tricky.",
-            "Did you initialise those variables to the values correctly?",
-            "Did you update variables correctly? Double check those.",
-            "Sometimes it can help to clear out variable values before reusing them.",
-            "Is that counter incremented in the right place?",
-            "Maybe count the number of times that loop executes. Is it what you expect?",
+            "آیا لوپ با یک غیر صفر شروع میشه؟چرا ؟ مطمئن هستید؟",
+            "آیا مطمئن هستید که لوپ باید به طول ۲ برسه؟ به نظر غیر طبیعی میاد.",
+            "آیا == هست وقتی که باید == باشد؟",
+            "آیا لوپ درونی وابسته به متغیرهای لوپ خارجی هست؟ اینها بعضی مواقع می توانند مشکل ساز یاشند.",
+            "آیا این متغیرها رو مقادیر اولیه درستی دادید؟",
+            "آیا متغیرها رو به روز کردید؟ دوباره چک کنید.",
+            "بعضی مواقع بهتر است که متغیرها رو پاک کنید قبل از اینکه دوباره از اونها استفاده کنید.",
+            "آیا کانتر افزایش صعودی درستی دارد؟",
+            "شاید تعداد دفعاتی که لوپ اجرا می شود رو می شمارد ، آیا این چیزی است که شما می خواهید؟",
 
             // Motivational
-            "Ugh, this is frustrating, but I'm certain we'll get it.",
-            "Don't give up, but perhaps take a quick break. Never underestimate the power of a break!",
-            "Maybe take a little bit of a break. You might be surprised with what you think of in 10mins from now.",
-            "You'll get this, but in the mean time, go work on something else. A change of pace could be good.",
+            "این خیلی خسته کننده است ولی من مطمئن هستم به چیزی که می خواهیم می رسیم.",
+            "تسلیم نشوید ، اما شاید یک استراحت کوتاه بکنید. هیچ وقت قدرت یک استراحت رو کم نگیرید.",
+            "احتمال داره که غافلگیر بشید با تغییر طرز فکرتون در ده دقیقه.",
+            "شما این رو حل خواهید کرد ولی همزمان  به کارهای دیگه هم برسید. یه تنوع می تونه خوب باشه.",
     };
 
 }
